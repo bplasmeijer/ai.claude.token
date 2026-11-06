@@ -37,4 +37,4 @@ PASS: PONG
 - **Storage:** the token is saved in `.env`, which only you can read and git ignores. Never commit it.
 - **Other sources:** you can also export `CLAUDE_CODE_OAUTH_TOKEN` yourself, or pass it as `make check CLAUDE_CODE_OAUTH_TOKEN=...`.
 - **Validity:** the token is valid for one year. `make remove-token` deletes only your local copy, so the token keeps working.
-- **What the token can do:** it can only make model requests. It doesn't work with `--bare` mode.
+- **Limits:** the token can't use Remote Control or claude.ai connectors (local MCP servers still work), and `claude --bare` ignores it; use `ANTHROPIC_API_KEY` there instead.
